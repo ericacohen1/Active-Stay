@@ -20,9 +20,9 @@ $(document).ready(function () {
         $(".main-page").hide();
         $(".second-page").show();
 
-        var userInput = $("#user-input").val();
+        var userInput = $("#addZip").val();
         var weatherAPIKey = "166a433c57516f51dfab1f7edaed8413";;
-        var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + "zip=" + userInput + "&units=imperial&appid=" + weatherAPIKey;
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip=" + userInput + "&units=imperial&appid=" + weatherAPIKey;
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -36,6 +36,7 @@ $(document).ready(function () {
     $(".back").on("click", function (event) {
         $(".main-page").show();
         $(".second-page").hide();
+        $("#addZip").val("");
     });
 
 });
