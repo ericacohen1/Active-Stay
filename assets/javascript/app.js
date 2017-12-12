@@ -2,8 +2,9 @@ $(document).ready(function() {
 
 $(".second-page").hide();
 
-$(".submit").on("click", function(event) {
+$("form").on("submit", function(event) {
 //call api
+event.preventDefault();
 $(".main-page").hide();
 $(".second-page").show();
 });
