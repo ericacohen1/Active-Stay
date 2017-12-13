@@ -16,8 +16,22 @@ $(document).ready(function () {
                method: "GET"
            }).done(function (response) {
                console.log(response);
+
+               var cityName = $("<div>");
+               cityName.text(response.name);
+               $(".city-name").text("City Name: " + response.name);
+
+               var weather = $("<div>");
+               weather.text(response.weather[0].description);
+               $(".weather").text("Weather: " + response.weather[0].description);
+
+               var temp = $("<div>");
+               temp.text(response.main.temp); 
+               $(".temp").html("<p>" + "Current Temperature: " + response.main.temp + "°F" + "</p>");
+               $(".temp").append("<p>" + "High: " + response.main.temp_max + "°F" + "</p>");
+               $(".temp").append("<p>" + "Low: " + response.main.temp_min + "°F" + "</p>");
+               
            });
-    
     
        });
     
