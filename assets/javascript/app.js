@@ -33,7 +33,7 @@ $(document).ready(function () {
                $(".temp").append("<p>" + "Low: " + response.main.temp_min + "°F" + "</p>");
 
                function hotelModal() {// Get the modal
-               var modal = document.getElementById('myHotelModal');
+               var modal = document.getElementById("myHotelModal");
 
                // Get the button that opens the modal
                var btn = document.getElementById("myHotelBtn");
@@ -60,7 +60,7 @@ $(document).ready(function () {
             }
             hotelModal();
 
-            //  function hotelModal() { // Get the modal
+            //  function hikingModal() { // Get the modal
             //      var modal = document.getElementById('myHikingModal');
 
             //      // Get the button that opens the modal
@@ -87,6 +87,7 @@ $(document).ready(function () {
             //      }
             //  }
             //  hikingModal();
+
                
            });
     
