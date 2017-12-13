@@ -28,7 +28,12 @@ $(document).ready(function () {
             method: "GET"
         }).done(function (response) {
             console.log(response);
+             $(".weatherContainer").append(response.name);
+             $(".weather")
         });
+
+       
+
 
 
     });

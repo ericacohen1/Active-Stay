@@ -3,3 +3,8 @@
     
    
 }
+
+.weatherContainer {
+    background: url('https://images.unsplash.com/photo-1470290282174-30ea78123183?auto=format&fit=crop&w=750&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D') no-repeat;
+    background-size: contain;
+}

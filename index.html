@@ -49,14 +49,18 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-body">
-                        Basic panel example
-                    </div>
-                    <div class="panel-body">
-                        Basic panel example
-                    </div>
-                    <div class="panel-body">
-                        Basic panel example
+                    <!-- <img src="https://images.unsplash.com/photo-1470290282174-30ea78123183?auto=format&fit=crop&w=750&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
+                        alt="airplane" width="200" height="200"> -->
+                    <div class="weatherContainer">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,21 +69,40 @@
                     <div class="panel-body">
 
                         <div class="input-group">
-                            <button type="button" class="btn btn-default">Default</button>
-                            <br>
-                            <button type="button" class="btn btn-default">Default</button>
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Hotels</button>
+                            
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Modal Header</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Some text in the modal.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Hiking</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-default back">Back</button>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-default back">Back</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="assets/javascript/app.js"></script>
+        <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
