@@ -3,3 +3,9 @@
     
    
 }
+
+.travel-img {
+    background-image: url("../images/wing.jpeg");
+    /* This made the image full screen */
+    background-size: cover;
+    }
