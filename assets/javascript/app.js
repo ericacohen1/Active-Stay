@@ -1,7 +1,7 @@
 //Variable created to hold the trails that return from the hiking API.
 var trails = [];
 
-//created a function that calls the hiking API to retireve the lat, lon from the weather API and display name, location, length, summary, and link of each trail in a table.
+//Created a function that calls the hiking API to retireve the lat, lon from the weather API and display name, location, length, summary, and link of each trail in a table.
 //function is called in the form.on(submit) function.
 function hiking(lat, lon) {
     var hikingAPIKey = "7033803-9068238db793b0bd33d891cbb1a9277c";
@@ -11,23 +11,24 @@ function hiking(lat, lon) {
         method: "GET"
     }).done(function (response) {
         console.log(response);
-        //saving off the trails returned from the API to the global trails variable (see above), to be used with details modal.   
+//Saving off the trails returned from the API to the global trails variable (see above), to be used with details modal.   
         trails = response.trails;
         //loop thru the trails array.    
         for (var i = 0; i < response.trails.length; i++) {
-            //save various data points as variables to display in table.
+//Save various data points as variables to display in table.
             var hikeName = response.trails[i].name;
             var hikeLocation = response.trails[i].location;
             var hikeLength = response.trails[i].length;
             var hikeSummary = response.trails[i].summary;
             var hikeLink = response.trails[i].url;
 
-
+//Dynamically creating the content that populates the hiking table.            
             $(".hikingTable > tbody").append("<tr><td><a href='" + hikeLink + "' target='_blank'>" + hikeName + "</a></td><td>" + hikeLocation + "</td><td>" + hikeLength + "</td><td class='hidden-sm hidden-xs'>" + hikeSummary + "</td><td><button type='button' class='btn-xs' data-toggle='modal' data-hiking-index='" + i + "'data-target='#hikingModal'>Details</button></td></tr>")
         }
     })
 }
 
+//Created a function that will show certain content in the modal of the details button when it is clicked.
 $("#hikingModal").on("show.bs.modal", function (event) {
     var button = $(event.relatedTarget);
     var hikingIndexValue = button.data("hiking-index");
