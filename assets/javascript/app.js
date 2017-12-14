@@ -11,11 +11,11 @@ function hiking(lat, lon) {
         method: "GET"
     }).done(function (response) {
         console.log(response);
-    //saving off the trails returned from the API to the global trails variable (see above), to be used with details modal.   
+        //saving off the trails returned from the API to the global trails variable (see above), to be used with details modal.   
         trails = response.trails;
-    //loop thru the trails array.    
+        //loop thru the trails array.    
         for (var i = 0; i < response.trails.length; i++) {
-//save various data points as variables to display in table.
+            //save various data points as variables to display in table.
             var hikeName = response.trails[i].name;
             var hikeLocation = response.trails[i].location;
             var hikeLength = response.trails[i].length;
@@ -28,12 +28,15 @@ function hiking(lat, lon) {
     })
 }
 
-$("#hikingModal").on("show.bs.modal", function(event){
+$("#hikingModal").on("show.bs.modal", function (event) {
     var button = $(event.relatedTarget);
     var hikingIndexValue = button.data("hiking-index");
 
-    $("#hiking-modal-body").append(trails[hikingIndexValue].name);
-    
+    $("#hike-name").text(trails[hikingIndexValue].name);
+    $("#hike-location").text(trails[hikingIndexValue].location);
+    $("#hike-summary").text(trails[hikingIndexValue].summary);
+    $("#hike-image").attr("src", trails[hikingIndexValue].imgSmallMed);
+
 });
 
 
