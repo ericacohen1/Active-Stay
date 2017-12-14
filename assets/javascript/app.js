@@ -6,7 +6,6 @@ function hiking (lat, lon) {
         method: "GET"
     }).done(function (response){
         console.log(response);
-       
         for (var i = 0; i < response.trails.length; i++) {
 
         var hikeName = response.trails[i].name;
