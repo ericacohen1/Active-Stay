@@ -1,3 +1,18 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBO_6sL3PZRKEYDqZBTojHf8fwHnkGDP-g",
+    authDomain: "active-stay-1513027333697.firebaseapp.com",
+    databaseURL: "https://active-stay-1513027333697.firebaseio.com",
+    projectId: "active-stay-1513027333697",
+    storageBucket: "active-stay-1513027333697.appspot.com",
+    messagingSenderId: "1029482097729"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
+
+
+
 //Variable created to hold the trails that return from the hiking API.
 var trails = [];
 
