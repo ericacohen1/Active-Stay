@@ -10,7 +10,14 @@
     background-size: cover;
     }
 
+.jumbotron > img{
+    width: 100%;
+    
+}
 
+.jumbotron {
+    background-color: white;
+}
     /* The Modal (background) */
 /* .modal {
     display: none; /* Hidden by default */
