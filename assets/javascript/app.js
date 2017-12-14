@@ -1,3 +1,6 @@
+//created a function that calls the hiking API to retireve the lat, lon from the weather API and display name, location, length, summary, and link of each trail in a table.
+//function is called in the form.on(submit) function.
+
 function hiking (lat, lon) {
     var hikingAPIKey = "7033803-9068238db793b0bd33d891cbb1a9277c";
     var queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&key=" + hikingAPIKey;
