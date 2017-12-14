@@ -6,6 +6,17 @@ function hiking (lat, lon) {
         method: "GET"
     }).done(function (response){
         console.log(response);
+       
+        for (var i = 0; i < response.trails.length; i++) {
+
+        var hikeName = response.trails[i].name;
+        var hikeLocation = response.trails[i].location;
+        var hikeLength = response.trails[i].length;
+        var hikeSummary = response.trails[i].summary;
+        var hikeLink = response.trails[i].url;
+
+        $(".hikingTable > tbody").append("<tr><td>" + hikeName + "</td><td>" + hikeLocation + "</td><td>" + hikeLength + "</td><td>" + hikeSummary + "</td><td>" + hikeLink + "</td></tr>")
+        }
     })
 }
 
