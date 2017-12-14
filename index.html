@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="jumbotron">
-                    <h1>Active Stay</h1>
+                    <img src="assets/images/active_stay.png" alt="logo" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -42,59 +42,108 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="jumbotron">
-                    <h1>Active Stay</h1>
+                    <img src="assets/images/active_stay.png" alt="logo" class="img-responsive">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default travel-img">
-                    <div class="panel-body city-name">
+                    <div class="weatherInfoBox">
+                        <div class="panel-body city-name">
 
-                    </div>
-                    <div class="panel-body weather">
+                        </div>
+                        <div class="panel-body weather">
 
-                    </div>
-                    <div class="panel-body temp">
-
+                        </div>
+                        <div class="panel-body temp">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-body">
+                        <div class="hotelModal">
+                            <!-- Trigger/Open The Modal -->
+                            <button id="myHotelBtn">Hotels</button>
 
-                        <div class="input-group">
+                            <div class="input-group">
 
-                            <div>
-                                <!-- Trigger/Open The Modal -->
-                                <button type="button" class="btn btn-default" id="myBtn">Hotels</button>
+                                <div>
+                                    <!-- Trigger/Open The Modal -->
+                                    <button type="button" class="btn btn-default" id="myBtn">Hotels</button>
 
-                                <!-- The Modal -->
-                                <div id="myModal" class="modal">
+                                    <!-- The Modal -->
+                                    <div id="myModal" class="modal">
 
-                                    <!-- Modal content -->
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p>Some text in the Modal..</p>
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <p>Some text in the Modal..</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- <button type="button" class="btn btn-default">Hotels</button>
+
+                                <!-- <button type="button" class="btn btn-default">Hotels</button>
                             <br>
                             <button type="button" class="btn btn-default">Hiking</button> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container hiking">
             <div class="row">
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-default back">Back</button>
+                <div class="col-md-12 panel panel-default ">
+                    <div class="panel-body">
+                        <table class="hikingTable table table-hover table-responsive">
+                            <thead>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Length</th>
+                                <th class="hidden-sm hidden-xs">Summary</th>
+                                <th>Details</th>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <!-- Hiking Modal Only Shows Up When We Click Details Button -->
+    <div class="modal fade" id="hikingModal" tabindex="-1" role="dialog" aria-labelledby="hikingModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="hikingModalLabel">Hike Details</h4>
+                </div>
+                <div id="hiking-modal-body" class="modal-body">
+                    <div id="hike-name"></div>
+                    <div id="hike-location"></div>
+                    <div id="hike-summary"></div>
+                    <div>
+                        <img id="hike-image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Boostrap Javascript file, needed for modals -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
 
