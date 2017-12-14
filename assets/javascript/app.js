@@ -18,7 +18,7 @@ function hiking(lat, lon) {
             var hikeLink = response.trails[i].url;
 
 
-            $(".hikingTable > tbody").append("<tr><td><a href='" + hikeLink + "' target='_blank'>" + hikeName + "</a></td><td>" + hikeLocation + "</td><td>" + hikeLength + "</td><td class='hidden-sm hidden-xs'>" + hikeSummary + "</td><td></td></tr>")
+            $(".hikingTable > tbody").append("<tr><td><a href='" + hikeLink + "' target='_blank'>" + hikeName + "</a></td><td>" + hikeLocation + "</td><td>" + hikeLength + "</td><td class='hidden-sm hidden-xs'>" + hikeSummary + "</td><td><button type='button' class='btn-xs' data-toggle='modal' data-target='#hikingModal'>Details</button></td></tr>")
         }
     })
 }
