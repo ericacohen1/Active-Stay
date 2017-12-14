@@ -143,6 +143,17 @@ $(document).ready(function () {
             $(".temp").append("<p>" + "High: " + response.main.temp_max + "°F" + "</p>");
             $(".temp").append("<p>" + "Low: " + response.main.temp_min + "°F" + "</p>");
 
+
+            database.ref().set({
+                zip: userInput
+            });
+            database.ref().on("value", function (snapshot) {
+
+            $("#zipcode").append(snapshot.val().zip);
+},          function (errorObject) {
+            console.log("Errors handled: " + errorObject.code);
+});
+
             hiking(response.coord.lat, response.coord.lon);
             initMap(response.coord.lat, response.coord.lon);
 

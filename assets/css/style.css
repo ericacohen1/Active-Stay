@@ -34,7 +34,8 @@
     width: 300px;
     margin: auto;
     font-size: 20px;
-    height: 100%;
+    height: 300px;
+    margin-top: 45px;
 }
 
 #trv-img {
@@ -68,3 +69,28 @@
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.city-name {
+    padding-top: 45px;
+}
+
+h3 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(15, 92, 38);
+    text-decoration: underline;
+}
+
+#zipcode {
+    color: rgb(15, 92, 38);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+h1 {
+    margin-top: 0px;
+    text-align: center;
+    font-size: 20px;
+    color: blue;
+}
+
