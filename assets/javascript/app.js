@@ -1,3 +1,15 @@
+function hiking (lat, lon) {
+    var hikingAPIKey = "7033803-9068238db793b0bd33d891cbb1a9277c";
+    var queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&key=" + hikingAPIKey;
+    $.ajax ({
+        url: queryURL,
+        method: "GET"
+    }).done(function (response){
+        console.log(response);
+    })
+}
+
+
 $(document).ready(function () {
 
     $(".second-page").hide();
@@ -31,6 +43,8 @@ $(document).ready(function () {
             $(".temp").append("<p>" + "High: " + response.main.temp_max + "°F" + "</p>");
             $(".temp").append("<p>" + "Low: " + response.main.temp_min + "°F" + "</p>");
 
+            hiking(response.coord.lat, response.coord.lon);
+
         });
 
 
@@ -60,7 +74,7 @@ $(document).ready(function () {
             }
         }
 
-        
+
        
 
     });
