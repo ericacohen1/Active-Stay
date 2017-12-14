@@ -1,23 +1,24 @@
 //created a function that calls the hiking API to retireve the lat, lon from the weather API and display name, location, length, summary, and link of each trail in a table.
 //function is called in the form.on(submit) function.
 
-function hiking (lat, lon) {
+function hiking(lat, lon) {
     var hikingAPIKey = "7033803-9068238db793b0bd33d891cbb1a9277c";
     var queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&key=" + hikingAPIKey;
-    $.ajax ({
+    $.ajax({
         url: queryURL,
         method: "GET"
-    }).done(function (response){
+    }).done(function (response) {
         console.log(response);
         for (var i = 0; i < response.trails.length; i++) {
 
-        var hikeName = response.trails[i].name;
-        var hikeLocation = response.trails[i].location;
-        var hikeLength = response.trails[i].length;
-        var hikeSummary = response.trails[i].summary;
-        var hikeLink = response.trails[i].url;
+            var hikeName = response.trails[i].name;
+            var hikeLocation = response.trails[i].location;
+            var hikeLength = response.trails[i].length;
+            var hikeSummary = response.trails[i].summary;
+            var hikeLink = response.trails[i].url;
 
-        $(".hikingTable > tbody").append("<tr><td>" + hikeName + "</td><td>" + hikeLocation + "</td><td>" + hikeLength + "</td><td>" + hikeSummary + "</td><td>" + hikeLink + "</td></tr>")
+
+            $(".hikingTable > tbody").append("<tr><td><a href='" + hikeLink + "' target='_blank'>" + hikeName + "</a></td><td>" + hikeLocation + "</td><td>" + hikeLength + "</td><td class='hidden-sm hidden-xs'>" + hikeSummary + "</td><td></td></tr>")
         }
     })
 }
@@ -88,7 +89,7 @@ $(document).ready(function () {
         }
 
 
-       
+
 
     });
 

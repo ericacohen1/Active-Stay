@@ -51,6 +51,7 @@
 
 .hikingTable {
     color: rgb(28, 128, 28);
+    overflow-y: hidden;
 }
 
 .weatherInfoBox {
