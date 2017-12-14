@@ -22,7 +22,8 @@ function hiking(lat, lon) {
             var hikeSummary = response.trails[i].summary;
             var hikeLink = response.trails[i].url;
 
-//Dynamically creating the content that populates the hiking table.            
+//Dynamically creating the content that populates the hiking table.     
+//Saving off the index of the trail we're displaying as data-hiking-index on the details button so we know which button the user clicked.       
             $(".hikingTable > tbody").append("<tr><td><a href='" + hikeLink + "' target='_blank'>" + hikeName + "</a></td><td>" + hikeLocation + "</td><td>" + hikeLength + "</td><td class='hidden-sm hidden-xs'>" + hikeSummary + "</td><td><button type='button' class='btn-xs' data-toggle='modal' data-hiking-index='" + i + "'data-target='#hikingModal'>Details</button></td></tr>")
         }
     })
@@ -30,9 +31,11 @@ function hiking(lat, lon) {
 
 //Created a function that will show certain content in the modal of the details button when it is clicked.
 $("#hikingModal").on("show.bs.modal", function (event) {
+//The event that is getting the button that was clicked.    
     var button = $(event.relatedTarget);
+//Retrieve hiking index from the button attr.     
     var hikingIndexValue = button.data("hiking-index");
-
+//Using hiking index value to get the correct trail from the global trails array.
     $("#hike-name").text(trails[hikingIndexValue].name);
     $("#hike-location").text(trails[hikingIndexValue].location);
     $("#hike-summary").text(trails[hikingIndexValue].summary);
