@@ -1,7 +1,10 @@
 .addZip {
     -webkit-appearance: none;
-    
-   
+}
+
+#addZip {
+    font-family: 'Montserrat', sans-serif, Arial;
+    text-align: center;
 }
 
 .travel-img {
@@ -23,6 +26,7 @@
 .hikingTable {
     color: rgb(28, 128, 28);
     overflow-y: hidden;
+    font-family: 'Montserrat', sans-serif, Arial;
 }
 
 .weatherInfoBox {
@@ -61,13 +65,14 @@
     background-color: rgb(9, 61, 9);
     color: white;
     margin-top: 5px;
+    font-family: 'Montserrat', sans-serif, Arial;
 
 }
 
 #enterText {
     color: rgb(9, 61, 9);
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif, Arial;
 }
 
 .city-name {
@@ -76,14 +81,14 @@
 
 h3 {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif, Arial;
     color: rgb(15, 92, 38);
     text-decoration: underline;
 }
 
 #zipcode {
     color: rgb(15, 92, 38);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif, Arial;
     font-size: 15px;
 }
 
@@ -103,6 +108,8 @@ h1 {
     padding-right: 12px;
     padding-bottom: 6px;
     padding-left: 12px;
+    font-family: 'Montserrat', sans-serif, Arial;
+
 }
 
 .modal-dialog {
