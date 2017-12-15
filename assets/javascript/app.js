@@ -147,7 +147,7 @@ $(document).ready(function () {
             database.ref().set({
                 zip: userInput
             });
-            database.ref().on("value", function (snapshot) {
+            database.ref().once("value", function (snapshot) {
 
             $("#zipcode").append(snapshot.val().zip);
 },          function (errorObject) {
