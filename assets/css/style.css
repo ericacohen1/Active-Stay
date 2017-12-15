@@ -111,7 +111,12 @@ h1 {
     overflow-x: auto;
 }
 
+@media screen and (max-width: 460px) {
+    #hike-image {
+        width: 100%;
+    }
+}
 
 /* changes
 html line 104
-css lines 97-111 */
+css lines 97-118 */
