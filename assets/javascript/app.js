@@ -58,56 +58,33 @@ $("#hikingModal").on("show.bs.modal", function (event) {
 
 });
 
-var map;
-var infowindow;
-
 function initMap(lat, lon) {
+    var myLatlng = {lat: lat, lng: lon};
 
-    var pyrmont = {
-        lat: lat,
-        lng: lon
-    };
-    console.log(lat);
-    console.log(lon);
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: pyrmont,
-        zoom: 15
-
+   var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 7,
+      center: myLatlng
     });
 
-    infowindow = new google.maps.InfoWindow();
-    var service = new google.maps.places.PlacesService(map);
-    service.nearbySearch({
-        location: pyrmont,
-        radius: 500,
-        type: ['store']
-    }, callback);
-}
-
-function callback(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
-        }
-    }
-}
-
-function createMarker(place) {
-
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-        map: {
-            lat: lat,
-            lng: lon
-        },
-        position: place.geometry.location
+   var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Click to zoom'
     });
 
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(place.name);
-        infowindow.open(map, this);
+   map.addListener('center_changed', function() {
+      // 3 seconds after the center of the map has changed, pan back to the
+      // marker.
+      window.setTimeout(function() {
+        map.panTo(marker.getPosition());
+      }, 3000);
     });
-}
+
+   marker.addListener('click', function() {
+      map.setZoom(8);
+      map.setCenter(marker.getPosition());
+    });
+  }
 
 
 $(document).ready(function () {
