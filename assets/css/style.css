@@ -107,4 +107,11 @@ h1 {
 
 .modal-dialog {
     text-align: center;
+    overflow-y: auto;    
+    overflow-x: auto;
 }
+
+
+/* changes
+html line 104
+css lines 97-111 */
